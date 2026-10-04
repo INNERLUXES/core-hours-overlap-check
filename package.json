@@ -1,0 +1,50 @@
+{
+  "name": "core-hours-overlap-check",
+  "version": "1.0.0",
+  "description": "Computes the working time a team spread over time zones really shares, day by day, and lists the days when it falls short of what the team agreed: every pair, every person with an anchor, or a fixed core window in one zone. It finds the weeks when one country has changed its clocks and another has not yet, and the days off and holidays of the team file, with the reason for each day. Time zone math with the Intl API of Node only, no copy of the time zone database; --explain shows the moments in UTC behind each number. Reads no clock, names only, no dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "core-hours-overlap-check": "bin/core-hours-overlap-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "research",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "time-zones",
+    "working-hours",
+    "core-hours",
+    "overlap",
+    "daylight-saving-time",
+    "distributed-teams",
+    "nearshore",
+    "scheduling",
+    "ci",
+    "cli"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/core-hours-overlap-check.git"
+  },
+  "homepage": "https://innerluxes.dev/software-development/nearshore/staff-augmentation"
+}
