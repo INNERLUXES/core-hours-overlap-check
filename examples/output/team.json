@@ -1,0 +1,3509 @@
+{
+  "tool": "core-hours-overlap-check",
+  "version": "1.0.0",
+  "team": {
+    "file": "examples/team.json",
+    "name": "Example product team"
+  },
+  "range": {
+    "labels": "offset",
+    "days": 35,
+    "first": "day 0 (Mon)",
+    "last": "day 34 (Sun)"
+  },
+  "dayZone": "Europe/Berlin",
+  "people": [
+    {
+      "name": "Anke",
+      "zone": "Europe/Berlin",
+      "hours": "mon-fri 09:00-17:30"
+    },
+    {
+      "name": "Ben",
+      "zone": "America/New_York",
+      "hours": "mon-fri 07:30-12:00, 13:00-16:00"
+    },
+    {
+      "name": "Caio",
+      "zone": "America/Sao_Paulo",
+      "hours": "mon-fri 08:30-11:30, 12:30-17:30"
+    },
+    {
+      "name": "Dina",
+      "zone": "Europe/Lisbon",
+      "hours": "mon-fri 09:00-13:00, 14:00-18:00"
+    }
+  ],
+  "rules": [
+    {
+      "id": "anchor-overlap",
+      "key": "anchorOverlap",
+      "text": "everyone shares at least 240 minutes a day with Anke (days of Europe/Berlin)"
+    },
+    {
+      "id": "core-window",
+      "key": "coreWindow",
+      "text": "everyone works 16:30-17:30 Europe/Berlin in full on mon-fri"
+    }
+  ],
+  "clockChanges": [
+    {
+      "zone": "America/New_York",
+      "label": "day 6 (Sun)",
+      "before": "UTC-05:00",
+      "after": "UTC-04:00"
+    },
+    {
+      "zone": "Europe/Berlin",
+      "label": "day 27 (Sun)",
+      "before": "UTC+01:00",
+      "after": "UTC+02:00"
+    },
+    {
+      "zone": "Europe/Lisbon",
+      "label": "day 27 (Sun)",
+      "before": "UTC+00:00",
+      "after": "UTC+01:00"
+    }
+  ],
+  "absences": [
+    {
+      "kind": "day-off",
+      "label": "day 15 (Tue)",
+      "people": [
+        "Dina"
+      ],
+      "text": "Dina day off on day 15 (Tue)"
+    },
+    {
+      "kind": "holiday",
+      "label": "day 32 (Fri)",
+      "people": [
+        "Anke",
+        "Dina"
+      ],
+      "text": "Spring holiday for Anke and Dina on day 32 (Fri)"
+    }
+  ],
+  "totals": {
+    "days": 35,
+    "daysWithChecks": 25,
+    "checks": 175,
+    "met": 144,
+    "short": 31,
+    "shortDays": 20
+  },
+  "failures": [
+    {
+      "label": "day 7 (Mon)",
+      "day": 7,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 8 (Tue)",
+      "day": 8,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 9 (Wed)",
+      "day": 9,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 10 (Thu)",
+      "day": 10,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 11 (Fri)",
+      "day": 11,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 14 (Mon)",
+      "day": 14,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 15 (Tue)",
+      "day": 15,
+      "rule": "anchor-overlap",
+      "who": "Dina with Anke",
+      "short": "Dina",
+      "minutes": 0,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "day-off",
+          "text": "Dina has a day off on day 15 (Tue)"
+        }
+      ]
+    },
+    {
+      "label": "day 15 (Tue)",
+      "day": 15,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 15 (Tue)",
+      "day": 15,
+      "rule": "core-window",
+      "who": "Dina",
+      "short": "Dina",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "day-off",
+          "text": "Dina has a day off on day 15 (Tue)"
+        }
+      ]
+    },
+    {
+      "label": "day 16 (Wed)",
+      "day": 16,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 17 (Thu)",
+      "day": 17,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 18 (Fri)",
+      "day": 18,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 21 (Mon)",
+      "day": 21,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 22 (Tue)",
+      "day": 22,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 23 (Wed)",
+      "day": 23,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 24 (Thu)",
+      "day": 24,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 25 (Fri)",
+      "day": 25,
+      "rule": "core-window",
+      "who": "Ben",
+      "short": "Ben",
+      "minutes": 30,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 28 (Mon)",
+      "day": 28,
+      "rule": "anchor-overlap",
+      "who": "Caio with Anke",
+      "short": "Caio",
+      "minutes": 180,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 28 (Mon)",
+      "day": 28,
+      "rule": "core-window",
+      "who": "Caio",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 29 (Tue)",
+      "day": 29,
+      "rule": "anchor-overlap",
+      "who": "Caio with Anke",
+      "short": "Caio",
+      "minutes": 180,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 29 (Tue)",
+      "day": 29,
+      "rule": "core-window",
+      "who": "Caio",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 30 (Wed)",
+      "day": 30,
+      "rule": "anchor-overlap",
+      "who": "Caio with Anke",
+      "short": "Caio",
+      "minutes": 180,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 30 (Wed)",
+      "day": 30,
+      "rule": "core-window",
+      "who": "Caio",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 31 (Thu)",
+      "day": 31,
+      "rule": "anchor-overlap",
+      "who": "Caio with Anke",
+      "short": "Caio",
+      "minutes": 180,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 31 (Thu)",
+      "day": 31,
+      "rule": "core-window",
+      "who": "Caio",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "anchor-overlap",
+      "who": "Ben with Anke",
+      "short": "Ben",
+      "minutes": 0,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Anke on day 32 (Fri)"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "anchor-overlap",
+      "who": "Caio with Anke",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Anke on day 32 (Fri)"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "anchor-overlap",
+      "who": "Dina with Anke",
+      "short": "Dina",
+      "minutes": 0,
+      "need": 240,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Dina on day 32 (Fri)"
+        },
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Anke on day 32 (Fri)"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "core-window",
+      "who": "Anke",
+      "short": "Anke",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Anke on day 32 (Fri)"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "core-window",
+      "who": "Caio",
+      "short": "Caio",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "clock-change",
+          "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+        }
+      ]
+    },
+    {
+      "label": "day 32 (Fri)",
+      "day": 32,
+      "rule": "core-window",
+      "who": "Dina",
+      "short": "Dina",
+      "minutes": 0,
+      "need": 60,
+      "met": false,
+      "reasons": [
+        {
+          "kind": "holiday",
+          "text": "Spring holiday for Dina on day 32 (Fri)"
+        }
+      ]
+    }
+  ],
+  "days": [
+    {
+      "day": 0,
+      "label": "day 0 (Mon)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day -1 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-05:00): 12:30Z-17:00Z, 18:00Z-21:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 12:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day -1 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day -1 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-05:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "label": "day 1 (Tue)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 0 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-05:00): 12:30Z-17:00Z, 18:00Z-21:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 12:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 0 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 0 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-05:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "label": "day 2 (Wed)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 1 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-05:00): 12:30Z-17:00Z, 18:00Z-21:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 12:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 1 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 1 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-05:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "label": "day 3 (Thu)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 2 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-05:00): 12:30Z-17:00Z, 18:00Z-21:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 12:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 2 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 2 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-05:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "label": "day 4 (Fri)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 3 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-05:00): 12:30Z-17:00Z, 18:00Z-21:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 12:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 3 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 3 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-05:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "label": "day 5 (Sat)",
+      "checks": []
+    },
+    {
+      "day": 6,
+      "label": "day 6 (Sun)",
+      "checks": []
+    },
+    {
+      "day": 7,
+      "label": "day 7 (Mon)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 6 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 6 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 6 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "label": "day 8 (Tue)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 7 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 7 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 7 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "label": "day 9 (Wed)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 8 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 8 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 8 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "label": "day 10 (Thu)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 9 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 9 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 9 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "label": "day 11 (Fri)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 10 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 10 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 10 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "label": "day 12 (Sat)",
+      "checks": []
+    },
+    {
+      "day": 13,
+      "label": "day 13 (Sun)",
+      "checks": []
+    },
+    {
+      "day": 14,
+      "label": "day 14 (Mon)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 13 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 13 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 13 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "label": "day 15 (Tue)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 14 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 14 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 0,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "day-off",
+              "text": "Dina has a day off on day 15 (Tue)"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 14 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): none; scheduled 09:00Z-13:00Z, 14:00Z-18:00Z, taken out: day off",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "day-off",
+              "text": "Dina has a day off on day 15 (Tue)"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): none; scheduled 15:30Z-16:30Z, taken out: day off",
+            "shared: none = 0 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "label": "day 16 (Wed)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 15 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 15 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 15 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "label": "day 17 (Thu)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 16 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 16 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 16 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "label": "day 18 (Fri)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 17 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 17 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 17 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "label": "day 19 (Sat)",
+      "checks": []
+    },
+    {
+      "day": 20,
+      "label": "day 20 (Sun)",
+      "checks": []
+    },
+    {
+      "day": 21,
+      "label": "day 21 (Mon)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 20 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 20 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 20 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "label": "day 22 (Tue)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 21 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 21 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 21 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "label": "day 23 (Wed)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 22 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 22 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 22 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "label": "day 24 (Thu)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 23 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 23 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 23 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "label": "day 25 (Fri)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 270,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 24 23:00Z-23:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-16:00Z = 270 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 24 23:00Z-23:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 11:30Z-14:30Z, 15:30Z-16:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+01:00): day 24 23:00Z-23:00Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 09:00Z-13:00Z, 14:00Z-18:00Z",
+            "Anke (Europe/Berlin, UTC+01:00): 08:00Z-16:30Z",
+            "shared: 09:00Z-13:00Z, 14:00Z-16:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Anke (Europe/Berlin, UTC+01:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 30,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: America/New_York is at UTC-04:00, ahead of its standard UTC-05:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Ben (America/New_York, UTC-04:00): 15:30Z-16:00Z",
+            "shared: 15:30Z-16:00Z = 30 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+01:00): 15:30Z-16:30Z",
+            "Dina (Europe/Lisbon, UTC+00:00): 15:30Z-16:30Z",
+            "shared: 15:30Z-16:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "label": "day 26 (Sat)",
+      "checks": []
+    },
+    {
+      "day": 27,
+      "label": "day 27 (Sun)",
+      "checks": []
+    },
+    {
+      "day": 28,
+      "label": "day 28 (Mon)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 27 22:00Z-22:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-15:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 180,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 27 22:00Z-22:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-14:30Z = 180 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 27 22:00Z-22:00Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 08:00Z-12:00Z, 13:00Z-17:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 08:00Z-12:00Z, 13:00Z-15:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Ben (America/New_York, UTC-04:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): none",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "label": "day 29 (Tue)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 28 22:00Z-22:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-15:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 180,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 28 22:00Z-22:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-14:30Z = 180 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 28 22:00Z-22:00Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 08:00Z-12:00Z, 13:00Z-17:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 08:00Z-12:00Z, 13:00Z-15:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Ben (America/New_York, UTC-04:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): none",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "label": "day 30 (Wed)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 29 22:00Z-22:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-15:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 180,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 29 22:00Z-22:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-14:30Z = 180 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 29 22:00Z-22:00Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 08:00Z-12:00Z, 13:00Z-17:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 08:00Z-12:00Z, 13:00Z-15:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Ben (America/New_York, UTC-04:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): none",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "label": "day 31 (Thu)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 240,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 30 22:00Z-22:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-15:30Z = 240 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 180,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would share 240 of 240 minutes"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 30 22:00Z-22:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 11:30Z-14:30Z = 180 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 390,
+          "need": 240,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 30 22:00Z-22:00Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 08:00Z-12:00Z, 13:00Z-17:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): 07:00Z-15:30Z",
+            "shared: 08:00Z-12:00Z, 13:00Z-15:30Z = 390 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Ben (America/New_York, UTC-04:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): none",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Dina (Europe/Lisbon, UTC+01:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 32,
+      "label": "day 32 (Fri)",
+      "checks": [
+        {
+          "rule": "anchor-overlap",
+          "who": "Ben with Anke",
+          "short": "Ben",
+          "minutes": 0,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Anke on day 32 (Fri)"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 31 22:00Z-22:00Z",
+            "Ben (America/New_York, UTC-04:00): 11:30Z-16:00Z, 17:00Z-20:00Z",
+            "Anke (Europe/Berlin, UTC+02:00): none; scheduled 07:00Z-15:30Z, taken out: Spring holiday",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Caio with Anke",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Anke on day 32 (Fri)"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 31 22:00Z-22:00Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): 11:30Z-14:30Z, 15:30Z-20:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): none; scheduled 07:00Z-15:30Z, taken out: Spring holiday",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "anchor-overlap",
+          "who": "Dina with Anke",
+          "short": "Dina",
+          "minutes": 0,
+          "need": 240,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Dina on day 32 (Fri)"
+            },
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Anke on day 32 (Fri)"
+            }
+          ],
+          "explain": [
+            "day of Europe/Berlin (UTC+02:00): day 31 22:00Z-22:00Z",
+            "Dina (Europe/Lisbon, UTC+01:00): none; scheduled 08:00Z-12:00Z, 13:00Z-17:00Z, taken out: Spring holiday",
+            "Anke (Europe/Berlin, UTC+02:00): none; scheduled 07:00Z-15:30Z, taken out: Spring holiday",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Anke",
+          "short": "Anke",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Anke on day 32 (Fri)"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Anke (Europe/Berlin, UTC+02:00): none; scheduled 14:30Z-15:30Z, taken out: Spring holiday",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Ben",
+          "short": "Ben",
+          "minutes": 60,
+          "need": 60,
+          "met": true,
+          "reasons": [],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Ben (America/New_York, UTC-04:00): 14:30Z-15:30Z",
+            "shared: 14:30Z-15:30Z = 60 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Caio",
+          "short": "Caio",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "clock-change",
+              "text": "clock change: Europe/Berlin is at UTC+02:00, ahead of its standard UTC+01:00; with every zone of the check on standard time it would cover 60 of 60 minutes"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Caio (America/Sao_Paulo, UTC-03:00): none",
+            "shared: none = 0 minutes"
+          ]
+        },
+        {
+          "rule": "core-window",
+          "who": "Dina",
+          "short": "Dina",
+          "minutes": 0,
+          "need": 60,
+          "met": false,
+          "reasons": [
+            {
+              "kind": "holiday",
+              "text": "Spring holiday for Dina on day 32 (Fri)"
+            }
+          ],
+          "explain": [
+            "window 16:30-17:30 Europe/Berlin (UTC+02:00): 14:30Z-15:30Z",
+            "Dina (Europe/Lisbon, UTC+01:00): none; scheduled 14:30Z-15:30Z, taken out: Spring holiday",
+            "shared: none = 0 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 33,
+      "label": "day 33 (Sat)",
+      "checks": []
+    },
+    {
+      "day": 34,
+      "label": "day 34 (Sun)",
+      "checks": []
+    }
+  ],
+  "basis": [
+    {
+      "key": "rfcUtc",
+      "text": "Because the daylight saving rules for local time zones are so convoluted and can change based on local law at unpredictable times, true interoperability is best achieved by using Coordinated Universal Time (UTC).",
+      "section": "4.1. Coordinated Universal Time (UTC)",
+      "page": "https://www.rfc-editor.org/rfc/rfc3339.txt"
+    },
+    {
+      "key": "tzUpdated",
+      "text": "It is updated periodically to reflect changes made by political bodies to time zone boundaries, UTC offsets, and daylight-saving rules.",
+      "section": "Time Zones",
+      "page": "https://www.iana.org/time-zones"
+    },
+    {
+      "key": "tzBaseOffset",
+      "text": "It does not always make sense to talk about a timezone's \"base offset\", which is not necessarily a single number.",
+      "section": "Scope of the tz database",
+      "page": "https://www.iana.org/time-zones/theory"
+    }
+  ],
+  "notes": [],
+  "verdict": {
+    "pass": false,
+    "text": "FAIL - 31 of 175 checks on 20 days are short of the rules"
+  }
+}
